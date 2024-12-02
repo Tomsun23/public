@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "760c5aa9-3109-4628-8850-241657618e5d",
+		"name": "Clinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39988213"
+	},
+	"item": [
+		{
+			"name": "Add patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": {\r\n        \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa9\",\r\n        \"use\": \"official\",\r\n        \"family\": \"Иванов\",\r\n        \"given\": [\"Сергей\",\"Петрович\"]\r\n  },\r\n  \"gender\": \"male\",\r\n  \"birthDate\": \"2020-11-29T18:02:43.252Z\",\r\n  \"active\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit patient",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa9\",\r\n  \"name\": {\r\n    \"id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa9\",\r\n    \"use\": \"non-official\",\r\n    \"family\": \"Иванов\",\r\n    \"given\": [\r\n      \"Петр\", \"Аркадьевич\"\r\n    ]\r\n  },\r\n  \"gender\": \"male\",\r\n  \"birthDate\": \"2000-05-15T07:17:34.700Z\",\r\n  \"active\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/3fa85f64-5717-4562-b3fc-2c963f66afa9",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch all patients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get patient by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/3fa85f64-5717-4562-b3fc-2c963f66afa9",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete patient by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/Patients/3fa85f64-5717-4562-b3fc-2c963f66afa9",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"3fa85f64-5717-4562-b3fc-2c963f66afa9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate eq",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=eq1993-03-04",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "eq1993-03-04"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate ne",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=ne2000-11-06",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "ne2000-11-06"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate lt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=lt2018-01-24T11:00",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "lt2018-01-24T11:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate gt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=gt2023-05-16",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "gt2023-05-16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate ge",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=ge2024-05-05",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "ge2024-05-05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate le",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=le2021-01-01",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "le2021-01-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate sa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=sa2018-03-19",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "sa2018-03-19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate eb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=eb2024-09-23",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "eb2024-09-23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search patient by birthdate ap",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/Patients/Search?parameter=ap2019",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"Patients",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "parameter",
+							"value": "ap2019"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

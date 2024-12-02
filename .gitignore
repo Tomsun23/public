@@ -1,0 +1,13 @@
+*.vsidx
+/Clinic/.vs
+/Clinic/obj
+/Clinic/bin
+/Clinic/Clinic.API/obj
+/Clinic/Clinic.API/bin
+/Clinic/Clinic.Infrastructure/obj
+/Clinic/Clinic.Infrastructure/bin
+/Clinic/Clinic.Domain/obj
+/Clinic/Clinic.Domain/bin
+/Clinic/Clinic.Client/obj
+/Clinic/Clinic.Client/bin
+/Clinic/.vs
